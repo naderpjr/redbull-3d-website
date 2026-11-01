@@ -28,9 +28,9 @@
 
 :root {
   --bg: rgb(216, 218, 223);
-  --m: clamp(16px, 2.4vw, 40px);   /* page margin */
-  --g: clamp(12px, 1.6vw, 24px);   /* column gutter */
-  --bar: 3.5rem;                   /* header height */
+  --m: clamp(16px, 2.4vw, 40px);  
+  --g: clamp(12px, 1.6vw, 24px);   
+  --bar: 3.5rem;                  
 }
 @media (min-width: 768px) {
   :root { --bar: 4.25rem; }
@@ -53,7 +53,6 @@ body {
   transition: color 0.45s;
 }
 
-/* subtle film grain */
 body::after {
   content: "";
   position: fixed;
@@ -71,7 +70,6 @@ body::after {
 .has-cursor * { cursor: none !important; }
 
 @layer components {
-  /* 12-column section grid */
   .grid-12 {
     position: relative;
     display: grid;
@@ -99,7 +97,6 @@ body::after {
   }
   .label { font-size: 0.78rem; font-weight: 500; opacity: 0.7; }
 
-  /* animated underline for links */
   .link-u { position: relative; }
   .link-u::after {
     content: "";
@@ -113,10 +110,9 @@ body::after {
   }
   .link-u:hover::after { transform: scaleX(1); transform-origin: left; }
 
-  /* line mask used by headlines */
   .line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 
-  /* reveal on scroll */
+
   [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
@@ -127,7 +123,6 @@ body::after {
   .line > [data-reveal] { display: block; opacity: 1; transform: translateY(110%); }
   .line > [data-reveal].in { transform: none; }
 
-  /* orbit ring in the Explore section */
   .orbit {
     position: absolute;
     top: 50%; left: 50%;
@@ -148,7 +143,6 @@ body::after {
     animation: var(--animate-orbit);
   }
 
-  /* custom cursor */
   .cursor { position: fixed; left: 0; top: 0; z-index: 60; pointer-events: none; }
   .cursor span {
     display: grid;
